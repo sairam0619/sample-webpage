@@ -1,0 +1,45 @@
+<!-- index.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Web Page</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>My Simple Web Page</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Login Form</h2>
+            <p>Please login with ur Name and Email.</p>
+            
+            <!-- Form for user details -->
+            <form method="post" action="{% url 'index' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Contact Information:</p>
+        <ul>
+            <li>Email: hello@example.com</li>
+            <li>Phone: 91+ 9003004000</li>
+        </ul>
+    </footer>
+</body>
+</html>

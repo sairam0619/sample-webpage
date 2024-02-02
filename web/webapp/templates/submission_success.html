@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .submitted-data {
+            position: absolute;
+            top: 20px; /* Adjust as needed */
+            left: 20px; /* Adjust as needed */
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Submission Success</h1>
+    <div class="submitted-data">
+        <h2>Submitted Data</h2>
+        <ul>
+            {% for submission in submissions %}
+            <li>{{ submission.name }} - {{ submission.email }} ({{ submission.submission_date|date:"DATETIME_FORMAT" }})</li>
+            {% endfor %}
+        </ul>
+    
+    </div>
+</body>
+</html>
